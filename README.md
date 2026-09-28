@@ -59,3 +59,18 @@ The package lives in `src/dmas/`:
 Analysis measures rumor reach, belief prevalence, vote-margin change, and
 election-flip frequency, with 95% confidence intervals by default. The topology
 comparison checks whether greater reach also corresponds to more election flips.
+
+## Development
+
+Run the complete test suite with branch coverage:
+
+```bash
+uv run pytest
+```
+
+The configured quality checks are:
+
+```bash
+uv run ruff check .
+uv run mypy
+```

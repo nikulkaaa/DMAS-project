@@ -1,6 +1,7 @@
 """Full experiment orchestration: repeated runs of each condition."""
 
 import importlib.metadata
+import multiprocessing
 import platform
 from collections.abc import Callable, Iterator, Sequence
 from concurrent.futures import ProcessPoolExecutor
@@ -94,7 +95,8 @@ def _execute_all(
         yield from map(_execute, tasks)
         return
     chunksize = max(1, len(tasks) // (8 * workers))
-    with ProcessPoolExecutor(max_workers=workers) as pool:
+    context = multiprocessing.get_context("spawn")
+    with ProcessPoolExecutor(max_workers=workers, mp_context=context) as pool:
         yield from pool.map(_execute, tasks, chunksize=chunksize)
 
 
