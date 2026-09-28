@@ -1,4 +1,4 @@
-"""Experimental factors, conditions, and model parameters (report Section 3.1).
+"""Experimental factors, conditions, and model parameters.
 
 Every numerical value of the model lives in :class:`ModelParameters`, whose
 defaults are the values used in the report. The rest of the package receives
@@ -36,7 +36,7 @@ class VotingTime(StrEnum):
 
 @dataclass(frozen=True)
 class Condition:
-    """One cell of the 2x2x2 experimental design."""
+    """One cell of the two-by-two-by-two experimental design."""
 
     topology: Topology
     skepticism: Skepticism
@@ -57,7 +57,7 @@ class Condition:
 
 
 def all_conditions() -> list[Condition]:
-    """Return the eight conditions of the design in a fixed order."""
+    """Return every condition in the design in a fixed order."""
     return [
         Condition(*levels)
         for levels in itertools.product(Topology, Skepticism, VotingTime)

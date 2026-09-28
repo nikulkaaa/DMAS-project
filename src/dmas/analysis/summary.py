@@ -1,4 +1,4 @@
-"""Outcome measures per condition and the topology comparison (Section 3.5).
+"""Outcome summaries per condition and topology comparison tables.
 
 Column naming convention: an estimate ``x`` comes with the bounds of its
 confidence interval in the columns ``x_ci_low`` and ``x_ci_high``.
@@ -26,8 +26,8 @@ CI_HIGH_SUFFIX = "_ci_high"
 CELL_COLUMNS = ("skepticism", "voting_time")
 MEAN_MEASURES = ("reach", "belief_prevalence", "margin_change")
 EQUAL = "equal"
-# Measures compared between the topologies, with the run-level column
-# behind each: the election-flip frequency is the mean of ``flipped``.
+# Measures compared between topologies and their run-level source columns.
+# The election-flip frequency is the mean of ``flipped``.
 _COMPARED_MEASURES = {"reach": "reach", "flip_frequency": "flipped"}
 # Means closer than this count as equal: means of equal sums may differ in
 # their last floating-point digit.

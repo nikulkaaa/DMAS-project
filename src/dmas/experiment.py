@@ -1,4 +1,4 @@
-"""The full experiment: R runs of every condition (report Section 3.4)."""
+"""Full experiment orchestration: repeated runs of each condition."""
 
 import importlib.metadata
 import platform
@@ -101,7 +101,7 @@ def _execute_all(
 def experiment_metadata(
     params: ModelParameters, runs_per_condition: int, seed: int
 ) -> dict[str, Any]:
-    """What is needed to reproduce an experiment; saved with its results."""
+    """Return the metadata needed to reproduce an experiment."""
     return {
         "runs_per_condition": runs_per_condition,
         "seed": seed,

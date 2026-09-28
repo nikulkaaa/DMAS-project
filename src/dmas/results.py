@@ -1,4 +1,4 @@
-"""The table of simulation results: its columns and its storage on disk.
+"""Simulation-result tables, column order, and disk storage.
 
 Every row describes one run: the levels of the three factors, the run index,
 and the fields of :class:`dmas.simulation.RunOutcome`. A results directory
@@ -29,7 +29,7 @@ CONDITION_COLUMNS = tuple(FACTORS)
 MEASURE_COLUMNS = tuple(field.name for field in fields(RunOutcome))
 COLUMNS = (*CONDITION_COLUMNS, "run", *MEASURE_COLUMNS)
 
-# Column dtypes follow the field types of RunOutcome.
+# Pandas dtypes follow the field types declared by RunOutcome.
 _PANDAS_DTYPES: dict[object, str] = {
     bool: "bool",
     int: "int64",
