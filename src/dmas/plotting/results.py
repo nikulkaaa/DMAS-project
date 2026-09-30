@@ -183,7 +183,7 @@ def _voting_time_handles() -> list[Line2D]:
             marker=_VOTING_TIME_MARKERS[voting_time],
             markersize=MARKER_SIZE,
             color=SECONDARY_INK,
-            label=f"Vote at {VOTING_TIME_NAMES[voting_time]}",
+            label=f"{VOTING_TIME_NAMES[voting_time]} deadline",
         )
         for voting_time in VotingTime
     ]
