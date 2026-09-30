@@ -114,9 +114,5 @@ def test_interval_errors_are_never_negative():
 
 
 def test_cell_label():
-    assert (
-        cell_label("low", "short") == r"Low skepticism, $T_{\mathrm{short}}$"
-    )
-    assert (
-        cell_label("high", "long") == r"High skepticism, $T_{\mathrm{long}}$"
-    )
+    assert cell_label("low", "short") == "Low skepticism, short deadline"
+    assert cell_label("high", "long") == "High skepticism, long deadline"

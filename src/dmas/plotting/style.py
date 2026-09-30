@@ -35,16 +35,16 @@ MARKER_SIZE = 5
 
 TOPOLOGY_COLORS = {Topology.RANDOM: "#3987e5", Topology.SMALL_WORLD: "#d55181"}
 TOPOLOGY_NAMES = {
-    Topology.RANDOM: "Random network",
-    Topology.SMALL_WORLD: "Small-world network",
+    Topology.RANDOM: "Random",
+    Topology.SMALL_WORLD: "Small world",
 }
 SKEPTICISM_NAMES = {
     Skepticism.LOW: "Low skepticism",
     Skepticism.HIGH: "High skepticism",
 }
 VOTING_TIME_NAMES = {
-    VotingTime.SHORT: r"$T_{\mathrm{short}}$",
-    VotingTime.LONG: r"$T_{\mathrm{long}}$",
+    VotingTime.SHORT: "Short",
+    VotingTime.LONG: "Long",
 }
 
 _DPI = 300
@@ -90,7 +90,7 @@ def cell_label(skepticism: str, voting_time: str) -> str:
     """Name of a skepticism x voting-time cell, e.g. for panel titles."""
     return (
         f"{SKEPTICISM_NAMES[Skepticism(skepticism)]}, "
-        f"{VOTING_TIME_NAMES[VotingTime(voting_time)]}"
+        f"{VOTING_TIME_NAMES[VotingTime(voting_time)].lower()} deadline"
     )
 
 
